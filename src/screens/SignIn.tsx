@@ -4,7 +4,7 @@ import ImgBg from '@assets/background.png';
 
 // VStack é uma view que organiza os componentes em coluna
 
-// Estemos utilizando o componentes Image para definir nossa imagem no bg, pois o componente nos fornece maior flexibilidade do que o BackgroundImage
+// Estamos utilizando o componentes Image para definir nossa imagem no bg, pois o componente nos fornece maior flexibilidade do que o BackgroundImage
 
 export function SignIn() {
   return (
