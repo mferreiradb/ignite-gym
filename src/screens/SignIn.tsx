@@ -1,4 +1,5 @@
-import { VStack, Image, Text, Center } from 'native-base';
+import { VStack, Image, Text, Center, Heading } from 'native-base';
+// Heading pode ser utilizado para textos em destaque, como titulos
 
 import ImgBg from '@assets/background.png';
 import Logo from '@assets/logo.svg';
@@ -21,6 +22,12 @@ export function SignIn() {
         <Logo />
 
         <Text color="gray.100">Treine sua menste e seu corpo</Text>
+      </Center>
+
+      <Center>
+        <Heading fontFamily="heading" color="gray.100">
+          Acesse sua conta
+        </Heading>
       </Center>
     </VStack>
   );
