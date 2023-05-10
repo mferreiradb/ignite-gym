@@ -3,6 +3,7 @@ import { VStack, Image, Text, Center, Heading } from 'native-base';
 
 import ImgBg from '@assets/background.png';
 import Logo from '@assets/logo.svg';
+import { Input } from '@components/Input';
 
 // VStack é uma view que organiza os componentes em coluna
 
@@ -25,10 +26,13 @@ export function SignIn() {
       </Center>
 
       <Center>
-        <Heading fontFamily="heading" color="gray.100">
+        <Heading fontFamily="heading" color="gray.100" mb={6} fontSize="xl">
           Acesse sua conta
         </Heading>
       </Center>
+
+      <Input placeholder="E-mail" placeholderTextColor="gray.300" />
+      <Input placeholder="Senha" placeholderTextColor="gray.300" />
     </VStack>
   );
 }
