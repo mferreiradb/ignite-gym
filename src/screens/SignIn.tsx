@@ -1,6 +1,7 @@
-import { VStack, Image } from 'native-base';
+import { VStack, Image, Text, Center } from 'native-base';
 
 import ImgBg from '@assets/background.png';
+import Logo from '@assets/logo.svg';
 
 // VStack é uma view que organiza os componentes em coluna
 
@@ -15,6 +16,12 @@ export function SignIn() {
         resizeMode="contain"
         position="absolute"
       />
+
+      <Center my={24}>
+        <Logo />
+
+        <Text color="gray.100">Treine sua menste e seu corpo</Text>
+      </Center>
     </VStack>
   );
 }
