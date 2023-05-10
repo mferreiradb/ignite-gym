@@ -147,3 +147,43 @@
             33: 148,
         },
         })
+
+**Utilizando SVG**
+
+- Nativamente, o RN não exibe SVG, porém podemos ter essa exibição através da instalação de bibliotecas auxiliares
+
+- Ao instalar o Native Base, instalamos uma dessas bibliotecas
+
+    - react-native-svg
+
+            expo install react-native-svg@12.1.1
+
+- Além disso, instalaremos outra bilioteca para que seja possível utilizarmos SVGs como componentes
+
+    - [SVG Transform](https://github.com/kristerkari/react-native-svg-transformer)
+
+            npm i react-native-svg-transformer --save-dev
+
+- Após a instalação do `SVG Transform`, precisamos adicionar um arquivo `metro.config.js` na raiz do projeto para que ele permia que uitilizamos os SVGs com a mesma sintaxe de um componente
+
+    - `metro.config.js`
+
+            const { getDefaultConfig } = require("expo/metro-config");
+
+            module.exports = (() => {
+            const config = getDefaultConfig(__dirname);
+
+            const { transformer, resolver } = config;
+
+            config.transformer = {
+                ...transformer,
+                babelTransformerPath: require.resolve("react-native-svg-transformer"),
+            };
+            config.resolver = {
+                ...resolver,
+                assetExts: resolver.assetExts.filter((ext) => ext !== "svg"),
+                sourceExts: [...resolver.sourceExts, "svg"],
+            };
+
+            return config;
+            })();
