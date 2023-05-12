@@ -4,6 +4,7 @@ import { VStack, Image, Text, Center, Heading } from 'native-base';
 import ImgBg from '@assets/background.png';
 import Logo from '@assets/logo.svg';
 import { Input } from '@components/Input';
+import { Button } from '@components/Button';
 
 // VStack é uma view que organiza os componentes em coluna
 
@@ -42,6 +43,8 @@ export function SignIn() {
         placeholder="Senha"
         placeholderTextColor="gray.300"
       />
+
+      <Button title="Acessar" />
     </VStack>
   );
 }
