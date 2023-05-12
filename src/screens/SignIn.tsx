@@ -11,7 +11,7 @@ import { Input } from '@components/Input';
 
 export function SignIn() {
   return (
-    <VStack flex={1} bg="gray.700">
+    <VStack px={10} flex={1} bg="gray.700">
       <Image
         source={ImgBg}
         alt="Pessoas treinando"
@@ -31,8 +31,17 @@ export function SignIn() {
         </Heading>
       </Center>
 
-      <Input placeholder="E-mail" placeholderTextColor="gray.300" />
-      <Input placeholder="Senha" placeholderTextColor="gray.300" />
+      <Input
+        autoCapitalize="none"
+        keyboardType="email-address"
+        placeholder="E-mail"
+        placeholderTextColor="gray.300"
+      />
+      <Input
+        secureTextEntry
+        placeholder="Senha"
+        placeholderTextColor="gray.300"
+      />
     </VStack>
   );
 }
