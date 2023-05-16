@@ -1,18 +1,23 @@
 import { VStack, Image, Text, Center, Heading, ScrollView } from 'native-base';
 // Heading pode ser utilizado para textos em destaque, como titulos
 
+import { AuthNavigatorRoutesProps } from '@routes/auth.routes';
+
 import ImgBg from '@assets/background.png';
 import Logo from '@assets/logo.svg';
 import { Input } from '@components/Input';
 import { Button } from '@components/Button';
+import { useNavigation } from '@react-navigation/native';
 
 // VStack é uma view que organiza os componentes em coluna
 
 // Estamos utilizando o componentes Image para definir nossa imagem no bg, pois o componente nos fornece maior flexibilidade do que o BackgroundImage
 
 export function SignIn() {
+  const navigation = useNavigation<AuthNavigatorRoutesProps>();
+
   function handleSignUp() {
-    alert('Sucess');
+    navigation.navigate('signup');
   }
   return (
     <ScrollView

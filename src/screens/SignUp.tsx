@@ -5,12 +5,19 @@ import ImgBg from '@assets/background.png';
 import Logo from '@assets/logo.svg';
 import { Input } from '@components/Input';
 import { Button } from '@components/Button';
+import { useNavigation } from '@react-navigation/native';
+import { AuthNavigatorRoutesProps } from '@routes/auth.routes';
 
 // VStack é uma view que organiza os componentes em coluna
 
 // Estamos utilizando o componentes Image para definir nossa imagem no bg, pois o componente nos fornece maior flexibilidade do que o BackgroundImage
 
 export function SignUp() {
+  const navigation = useNavigation<AuthNavigatorRoutesProps>();
+
+  function handleSignUp() {
+    navigation.navigate('signin');
+  }
   return (
     <ScrollView
       contentContainerStyle={{ flexGrow: 1 }}
@@ -46,7 +53,12 @@ export function SignUp() {
           <Button title="Criar e acessar" />
         </Center>
 
-        <Button mt={24} title="Voltar para o login" variant="outline" />
+        <Button
+          mt={24}
+          title="Voltar para o login"
+          variant="outline"
+          onPress={handleSignUp}
+        />
       </VStack>
     </ScrollView>
   );
