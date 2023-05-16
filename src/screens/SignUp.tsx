@@ -26,6 +26,8 @@ export function SignUp() {
       <VStack px={10} flex={1}>
         <Image
           source={ImgBg}
+          // DefaultSource define qual a imagem pardrão, para carregamento mais rápido
+          defaultSource={ImgBg}
           alt="Pessoas treinando"
           resizeMode="contain"
           position="absolute"
