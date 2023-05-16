@@ -11,12 +11,15 @@ import { Button } from '@components/Button';
 // Estamos utilizando o componentes Image para definir nossa imagem no bg, pois o componente nos fornece maior flexibilidade do que o BackgroundImage
 
 export function SignIn() {
+  function handleSignUp() {
+    alert('Sucess');
+  }
   return (
     <ScrollView
       contentContainerStyle={{ flexGrow: 1 }}
       showsVerticalScrollIndicator={false}
     >
-      <VStack px={10} flex={1} bg="gray.700">
+      <VStack px={10} flex={1}>
         <Image
           source={ImgBg}
           alt="Pessoas treinando"
@@ -49,7 +52,7 @@ export function SignIn() {
             Ainda não tem acesso?
           </Text>
         </Center>
-        <Button title="Criar conta" variant="outline" />
+        <Button title="Criar conta" variant="outline" onPress={handleSignUp} />
       </VStack>
     </ScrollView>
   );
